@@ -20,10 +20,10 @@ class Solution:
         for i in range(epochs): 
             y_hat = X @ w + b
             err = y_hat - y 
-
+            # gradients
             dw = (2.0 / n) * (X.T @ err)
             db = (2.0 / n) * np.sum(err)
-
+            # update
             w = w - lr * dw
             b = b - lr * db
 
