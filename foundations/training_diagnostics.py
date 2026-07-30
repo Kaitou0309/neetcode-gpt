@@ -30,7 +30,7 @@ class Solution:
         model.zero_grad()
         output = model(x)
         loss = nn.MSELoss()(output, y)
-        loss.backward() 
+        loss.backward() # gradient becomes available
         stats = []
         for module in model.children(): 
             if isinstance(module, nn.Linear): 
